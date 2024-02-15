@@ -1,6 +1,12 @@
-﻿namespace ControleDeContatos.Data
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace ControleDeContatos.Data
 {
-    public class BancoContext
+    public class BancoContext : DbContext
     {
+        public BancoContext(DbContextOptions<BancoContext> options) 
+        {
+        
+        }
     }
 }
