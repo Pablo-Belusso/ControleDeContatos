@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ControleDeContatos.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleDeContatos.Data
 {
@@ -8,5 +9,7 @@ namespace ControleDeContatos.Data
         {
         
         }
+
+        public DbSet<ContatoModel> Contatos { get; set; }
     }
 }
