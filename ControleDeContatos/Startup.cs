@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ControleDeContatos.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace ControleDeContatos
 {
@@ -16,7 +18,8 @@ namespace ControleDeContatos
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Configure os serviços aqui
+            services.AddControllersWithViews();
+            services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
